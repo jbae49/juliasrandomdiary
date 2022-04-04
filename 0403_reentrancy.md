@@ -6,7 +6,7 @@ I stumbled across a blog post that says it is actually possible for anyone to re
 
 <br />
 
-The answer is ... this is a simple preventative technique against reentrancy attacks!
+I found the exact same question on the Ethereum StackExchange and the answer says that this is a simple preventative technique against reentrancy attacks!! 
 
 <br />
 
