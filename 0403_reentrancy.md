@@ -2,7 +2,11 @@
 
 
 
-I stumbled across a blog post that says it is actually possible for anyone to recover Uniswap liquidity tokens that are accidentally sent to the pair contract itself by calling the `burn` function. I stopped reading the blog and looked at the `burn` function (UniswapV2Pair.sol). As I’m new to Solidity and there was an unfamiliar modifier called `lock`. I was curious why this is needed in many of their external functions as it’s just seemed to be used as it looks (below); checks whether the `unlocked` variable equals 1 and then changes it to 0 and then changes it again to 1 after executing the function. The answer is that this is a simple preventative technique against reentrancy attacks.
+I stumbled across a blog post that says it is actually possible for anyone to recover Uniswap liquidity tokens that are accidentally sent to the pair contract itself by calling the `burn` function. I stopped reading the blog and looked at the `burn` function (UniswapV2Pair.sol). As I’m new to Solidity and there was an unfamiliar modifier called `lock`. I was curious why this is needed in many of their external functions as it’s just seemed to be used as it looks (below); checks whether the `unlocked` variable equals 1 and then changes it to 0 and then changes it again to 1 after executing the function.
+
+<br />
+
+The answer is ... this is a simple preventative technique against reentrancy attacks!
 
 <br />
 
