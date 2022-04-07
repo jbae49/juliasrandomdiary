@@ -58,7 +58,6 @@ And there are 2 important Poly smart contracts that were responsible for setting
 - this is a highly privileged contract
 - verifies that it’s being communicated with by the right accounts
 - `bytes public ConKeepersPkBytes` stores Consensus book Keepers Public Key Bytes which is like a whitelist and addresses in this list are approved to tell the system about the state of transactions on different chains (so if the attacker can add his/her address to this list...)
-- it does `onlyOwner` check 
 - and this contract is owned by `EthCrossChainManager`...
 
 <br />
