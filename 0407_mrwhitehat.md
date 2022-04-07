@@ -11,11 +11,11 @@ Thursday? Already? How time flies! 🛫 What I’m curious about today is “Is 
 ---
 
 "I hope my life can be composed of unique adventures, so I like to learn and hack," the hacker sent messages via the Ethereum blockchain, which can be viewed publicly. 
-An anonymous hacker dubbed ‘Mr. White Hat’ returned the stolen assets and even did Q & A sessions - [link](https://twitter.com/tomrobin/status/1425487745166753794). The hacker also returned the $500k bug bounty, as well as other donations.
+An anonymous hacker dubbed ‘Mr. White Hat’ returned the stolen assets ($600M+ worth of tokens) and even did Q & A sessions - [link](https://twitter.com/tomrobin/status/1425487745166753794). The hacker also returned the $500k bug bounty, as well as other donations.
 
 <br />
 
-🐸 (fyi) - A smart contract is a program / a piece of software; it can be executed only when after is authorized by a digital signature of the “owner” of the contract and must be validated by the consensus *(by some nodes?)* and then change the state of the blockchain.
+🐸 (fyi) - A smart contract is a program / a piece of software; it can be executed only when after is authorized by a digital signature of the “owner” of the contract and must be validated by the consensus and then can change the state of the blockchain.
 
 <br />
 
@@ -34,12 +34,14 @@ Cross-chain networks
 
 so Poly Network?
 
-- has a master wallet for each underlying Layer-1 network (e.g., Bitcoin wallet, Ethereum wallet) and each of them stores a large amount of funds
+- has a master wallet for each underlying Layer-1 network (e.g., Bitcoin wallet, Ethereum wallet) and each of them stores a large amount of tokens
 - runs smart contracts which contain users’ instructions (e.g., “Here is 1 BTC, can you exchange this into ETH?”)
 
 <br />
 
-I’ve already said it twice but again, those master wallets contain a large number of tokens, so they should be kept secure, right? BTW who manages these master wallets? References below say “authenticator nodes” aka “Keepers” manage the wallets. 
+I’ve already said it twice but again, those master wallets contain a huge fund, so they should be kept secure, right? BTW who then manages these master wallets? 
+
+> “authenticator nodes” aka “keepers” manage the wallets. 
 
 <br />
 
