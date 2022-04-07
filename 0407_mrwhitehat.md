@@ -72,16 +72,10 @@ And there are 2 important Poly smart contracts that were responsible for setting
     
     → which means someone from another chain can invoke this function and can execute somewhat arbitrary codes
     
-    Here, what if the hacker sends a transaction to this contract like “add me to the whitelist” which means “register me as a keeper”? As this `Manager` contract owns the `Data` contract above, this contract actually has sufficient privileges to do that.
+    Here, what if the hacker sends a transaction to this contract like “add me to the whitelist” which means “register me as a keeper” (by calling the function below `putCurEpochConPubKeyBytes` and add their addresses to this list)? As this `Manager` contract owns the `Data` contract above, this contract actually has sufficient privileges to do that.
     
-
-- One more thing, this `EthCrossChainManager` contract would not call any function within the target contract, but only the one that conformed to the “*function signature*”
+<br />
     
-    → So for example, if an attacker could call the function below (which is in `EthCrossChainData`) by finding **the string** that matches with the first 4 bytes of the keccak256 hash of the name and arguments of `putCurEpochConPubKeyBytes`, the attacker could register his or her address as a keeper (add her/his address to the known list of authorized node addresses) 
-    
-      ethers.utils.id ('putCurEpochConPubKeyBytes(bytes)').slice(0, 10)` == `ethers.utils.id (```the string```).slice(0, 10)
-   
-
 ```solidity
 // Store Consensus book Keepers Public Key Bytes
     function putCurEpochConPubKeyBytes(bytes memory curEpochPkBytes) public whenNotPaused onlyOwner returns (bool) {
@@ -90,15 +84,26 @@ And there are 2 important Poly smart contracts that were responsible for setting
     }    
 ```
 
+<br />
 
-→ The attacker could find the string ('f1121318093(bytes,bytes,uint64)') and called the function through `EthCrossChainManager`, as `EthCrossChainManager` owns `EthCrossChainData`, they could pass the `onlyOwner` check and add their address to the keeper list 
+- One more thing, this `EthCrossChainManager` contract would not call any function within the target contract, but only the one that conformed to the “*function signature*”
     
-→ and could drain a large number of tokens (around $610M) from Poly’s master wallets!!
+    → So for example, if an attacker could call the function below (which is in `EthCrossChainData`) by finding **the string** that matches with the first 4 bytes of the keccak256 hash of the name and arguments of `putCurEpochConPubKeyBytes`, the attacker could register his or her address as a keeper (add her/his address to the known list of authorized node addresses) 
+    
+      ethers.utils.id ('putCurEpochConPubKeyBytes(bytes)').slice(0, 10)` == `ethers.utils.id (```the string```).slice(0, 10)
+   
+
+
+
+
+&nbsp; &nbsp; &nbsp; → The attacker did find the string ('f1121318093(bytes,bytes,uint64)') and called the function through `EthCrossChainManager`, as `EthCrossChainManager` owns `EthCrossChainData`, they could pass the `onlyOwner` check and add their address to the keeper list 
+    
+&nbsp; &nbsp; &nbsp; → and could drain a large number of tokens (around $610M) from Poly’s master wallets!!
 
 <br />
 <br />
 
-Who are you, Mr. White Hat! Can we be friends someday
+_Who are you, Mr. White Hat! Can we be friends someday_
 
 <br />
 <br />
