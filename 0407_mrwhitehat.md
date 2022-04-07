@@ -57,8 +57,11 @@ And there are 2 important Poly smart contracts that were responsible for setting
 
 - this is a highly privileged contract
 - verifies that it’s being communicated with by the right accounts
-- `bytes public ConKeepersPkBytes` stores Consensus book Keepers Public Key Bytes which is like a whitelist and addresses in this list are approved to tell the system about the state of transactions on different chains
-- and this contract is owned by `EthCrossChainManager`
+- `bytes public ConKeepersPkBytes` stores Consensus book Keepers Public Key Bytes which is like a whitelist and addresses in this list are approved to tell the system about the state of transactions on different chains (so if the attacker can add his/her address to this list...)
+- it does `onlyOwner` check 
+- and this contract is owned by `EthCrossChainManager`...
+
+<br />
 
 🐸 - the whitelist feature in the contract: enabling crypto withdrawals to go only to address already designated in the address book 
 
@@ -75,9 +78,9 @@ And there are 2 important Poly smart contracts that were responsible for setting
 
 - One more thing, this `EthCrossChainManager` contract would not call any function within the target contract, but only the one that conformed to the “*function signature*”
     
-    → So for example, if an attacker could call the function below (which is in `EthCrossChainData`) by finding **the string** that matches with the first 4 bytes of the keccak256 hash of the name and arguments of `putCurEpochConPubKeyBytes` (🌀), the attacker could register his or her address as a keeper (add her/his address to the known list of authorized node addresses) 
+    → So for example, if an attacker could call the function below (which is in `EthCrossChainData`) by finding **the string** that matches with the first 4 bytes of the keccak256 hash of the name and arguments of `putCurEpochConPubKeyBytes`, the attacker could register his or her address as a keeper (add her/his address to the known list of authorized node addresses) 
     
-    🌀  `ethers.utils.id ('putCurEpochConPubKeyBytes(bytes)').slice(0, 10)` == `ethers.utils.id (` the string `).slice(0, 10)`
+      ethers.utils.id ('putCurEpochConPubKeyBytes(bytes)').slice(0, 10)` == `ethers.utils.id (```the string```).slice(0, 10)
    
 
 ```solidity
@@ -93,6 +96,7 @@ And there are 2 important Poly smart contracts that were responsible for setting
     
 → and could drain a large number of tokens (around $610M) from Poly’s master wallets!!
 
+<br />
 <br />
 
 Who are you, Mr. White Hat! Can we be friends someday
