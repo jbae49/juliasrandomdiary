@@ -4,7 +4,7 @@ Sun Apr 10 8:03 PM
 
 <br />
 
-I went to the edm party last night 🎧. I had gummies (it was my first time lol!) so I was a bit high and sober and had fun (afair) thanks to that I slept A LOT today. I went with my neighbor and he drove me home so luckily I was able to come back home safely. He’s a phd student studying pharmaceutical science and he’s from the bay area and loves drugs. btw I’m feeling really lonely these days thinking of buying a pillow to cuddle with haha :/
+I went to the edm party last night 🎧. I had gummies and sober and had fun (afair) thanks to that I slept A LOT today. I went with my neighbor and he drove me home so luckily I was able to come back home safely. He’s a phd student studying pharmaceutical science and he loves drugs. Hmm I think I’m feeling really lonely these days 
 
 <br />
 <br />
