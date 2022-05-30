@@ -1,7 +1,6 @@
 # MEV for MEV babies Part. 1
 
 
-  
 
 <br />
 
