@@ -30,42 +30,64 @@ There was a lift-off in amount of extracted value during and after DeFi Summer (
 
 ### MEV strats
 
-- arbitrage
+<br />
+
+> **ARBITRAGE**
     
-    ex) Uniswap price arbitrage trades → timing matters here! For miners, they can just put their transactions to capitalize on these arb opportunities or get profits by overpaid gas fees paid by other traders or bots
+   
+   ex) Uniswap price arbitrage trades → timing matters here! For miners, they can just put their transactions to capitalize on these arb opportunities or get profits by overpaid gas fees paid by other traders or bots
+   
+<br />
+
+> **SANDWICHING**
     
-- sandwiching
     
-    just like frontrunning in traditional finance; by observing the mempool, miners can put their transactions before and right after a certain HUGE transaction that will influence the price of the underlying asset substantially
+   just like frontrunning in traditional finance; by observing the mempool, miners can put their transactions before and right after a certain HUGE transaction that will influence the price of the underlying asset substantially
     
-- liquidation
+<br />
+
+> **LIQUIDATION**
+
     
-    ex) dydx liquidation
+  ex) dydx liquidation
+
+<br />
+
+> **JIT (Just-in-Time Liquidity)**
     
-- JIT (Just-in-Time Liquidity)*
-    
-    : a new form of MEV that uses Uniswap v3's concentrated liquidity
-    
-    ```jsx
+ 
+ : a new form of MEV that uses Uniswap v3's concentrated liquidity
+   
+ 
+```
     Here's what that looks like in practice! @bertcmiller
     
     tx 1: add liquidity on v3 ETH/USDC pair
     tx 2: part of this transaction trades on the v3 ETH/USDC pair
     tx 3: remove liquidity on v3 ETH/USDC pair
-    ```
+```
+
+<br >
+
+> **TIME BANDIT**
     
-- time bandit attacks - Ari*
     
-    - One miner observes recent huge arbitrage opportunities likely taken by bots and already been recorded on chain. What miners can do here is that the miner rewinds the blockchain and then forks it in a 51% attack, which means it can retroactively take that past juicy transactions in its forked chain, and use the profit by taking these arbitrage opportunities to subsidize the 51% attack. Usually 51% attackers just harvest the block rewards but in this case, the miner can harvest much more, taking value in the application layer not just in the consensus layer. These attacks destabilize the whole blockchain and potentially put a system like Ethereum at risk.
+   - One miner observes recent huge arbitrage opportunities likely taken by bots and already been recorded on chain. What miners can do here is that the miner rewinds the blockchain and then forks it in a 51% attack, which means it can retroactively take that past juicy transactions in its forked chain, and use the profit by taking these arbitrage opportunities to subsidize the 51% attack. Usually 51% attackers just harvest the block rewards but in this case, the miner can harvest much more, taking value in the application layer not just in the consensus layer. These attacks destabilize the whole blockchain and potentially put a system like Ethereum at risk.
+
+<br />
+
+> **UNCLE BANDIT** - [bertcmiller](https://twitter.com/bertcmiller/status/1385294417091760134?lang=en) / [Elan](https://medium.com/alchemy-api/unmasking-the-ethereum-uncle-bandit-a2b3eb694019)
     
-- uncle bandit - [bertcmiller](https://twitter.com/bertcmiller/status/1385294417091760134?lang=en) / [Elan](https://medium.com/alchemy-api/unmasking-the-ethereum-uncle-bandit-a2b3eb694019)
-    - Uncle blocks are created when two blocks are mined and broadcasted at the same time (with the same block number). Since only one of the blocks can enter the primary Ethereum chain, the block that gets validated across more nodes becomes the canonical block, and the other one becomes what is known as an uncle block. Uncle blocks are recorded and accessible from the chain, but they have no impact on the canonical chain and their transactions do not change any state. Unlike Bitcoin, in the Ethereum system, miners still receive a block reward for discovering the uncle block; so basically, pseudo-mempool
     
-    Examples in practice
+   - Uncle blocks are created when two blocks are mined and broadcasted at the same time (with the same block number). Since only one of the blocks can enter the primary Ethereum chain, the block that gets validated across more nodes becomes the canonical block, and the other one becomes what is known as an uncle block. Uncle blocks are recorded and accessible from the chain, but they have no impact on the canonical chain and their transactions do not change any state. Unlike Bitcoin, in the Ethereum system, miners still receive a block reward for discovering the uncle block; so basically, pseudo-mempool
     
-    - uncle bandit’d Sandwich bot - [bercmiller](https://twitter.com/bertcmiller/status/1382673587715342339)
+  Examples in practice
+       
+  - uncle bandit’d Sandwich bot - [bertcmiller](https://twitter.com/bertcmiller/status/1382673587715342339)
+       
+  <br />
         
-        ```jsx
+```
         How it happened.
         
         1. Searchers observed a large Uniswap transaction in the mempool 
@@ -83,14 +105,17 @@ There was a lift-off in amount of extracted value during and after DeFi Summer (
         	- from the uncle block: Searcher buys AMP using WETH from the WETH/AMP Uniswap pool (driving up the price of AMP)
         	- Uncle Bandit buys AMP from Sushi Pool (where the price was not affected)
         	- Uncle Bandit sells AMP in Uniswap pool (at a much higher price than they bought it for)
-        ```
+```
+
+<br />
+
+- uncle bandit’d token sniper - [bertcmiller](https://twitter.com/bertcmiller/status/1385294457281695754?s=20&t=zIl5fj40-1HrsRAW560iyA) (it’s really a funny story lol)
+
         
-    - uncle bandit’d token sniper - [bercmiller](https://twitter.com/bertcmiller/status/1385294457281695754?s=20&t=zIl5fj40-1HrsRAW560iyA) (it’s really a funny story lol)
-        
-        ```jsx
+```jsx
         How it happened. 
         1. Tokensnipers were waiting for new tokens on Uniswap
-        ```
+```
         
 - sandwich baiting wars
 - Long Tail MEV
