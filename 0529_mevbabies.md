@@ -76,21 +76,22 @@ There was a lift-off in amount of extracted value during and after DeFi Summer (
 5. **Time-bandit**
     
     
-   - One miner observes recent huge arbitrage opportunities likely taken by bots and already been recorded on chain. What miners can do here is that the miner rewinds the blockchain and then forks it in a 51% attack, which means it can retroactively take that past juicy transactions in its forked chain, and use the profit by taking these arbitrage opportunities to subsidize the 51% attack. Usually 51% attackers just harvest the block rewards but in this case, the miner can harvest much more, taking value in the application layer not just in the consensus layer. These attacks destabilize the whole blockchain and potentially put a system like Ethereum at risk.
+   One miner observes recent huge arbitrage opportunities likely taken by bots and already been recorded on chain. What miners can do here is that the miner rewinds the blockchain and then forks it in a 51% attack, which means it can retroactively take that past juicy transactions in its forked chain, and use the profit by taking these arbitrage opportunities to subsidize the 51% attack. Usually 51% attackers just harvest the block rewards but in this case, the miner can harvest much more, taking value in the application layer not just in the consensus layer. These attacks destabilize the whole blockchain and potentially put a system like Ethereum at risk.
 
 <br />
 
 6. **Uncle Bandit** - [bertcmiller](https://twitter.com/bertcmiller/status/1385294417091760134?lang=en) / [Elan](https://medium.com/alchemy-api/unmasking-the-ethereum-uncle-bandit-a2b3eb694019)
     
     
-   - Uncle blocks are created when two blocks are mined and broadcasted at the same time (with the same block number). Since only one of the blocks can enter the primary Ethereum chain, the block that gets validated across more nodes becomes the canonical block, and the other one becomes what is known as an uncle block. Uncle blocks are recorded and accessible from the chain, but they have no impact on the canonical chain and their transactions do not change any state. Unlike Bitcoin, in the Ethereum system, miners still receive a block reward for discovering the uncle block; so basically, pseudo-mempool
+   Uncle blocks are created when two blocks are mined and broadcasted at the same time (with the same block number). Since only one of the blocks can enter the primary Ethereum chain, the block that gets validated across more nodes becomes the canonical block, and the other one becomes what is known as an uncle block. Uncle blocks are recorded and accessible from the chain, but they have no impact on the canonical chain and their transactions do not change any state. Unlike Bitcoin, in the Ethereum system, miners still receive a block reward for discovering the uncle block; so basically, pseudo-mempool
     
     <br />
 
-    Examples in practice
+    #### Examples in practice
+    ---
        
     
-    * *uncle bandit’d Sandwich bot* - [bertcmiller](https://twitter.com/bertcmiller/status/1382673587715342339)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🤖 uncle bandit’d Sandwich bot - [bertcmiller](https://twitter.com/bertcmiller/status/1382673587715342339)
        
   <br />
         
@@ -116,7 +117,7 @@ There was a lift-off in amount of extracted value during and after DeFi Summer (
 
 <br />
 
-- *uncle bandit’d token sniper* - [bertcmiller](https://twitter.com/bertcmiller/status/1385294457281695754?s=20&t=zIl5fj40-1HrsRAW560iyA) (it’s really a funny story lol)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🔫 uncle bandit’d token sniper - [bertcmiller](https://twitter.com/bertcmiller/status/1385294457281695754?s=20&t=zIl5fj40-1HrsRAW560iyA) (it’s really a funny story lol)
 
         
 ```jsx
