@@ -1,5 +1,8 @@
 # MEV for MEV babies Part. 1
 
+                                                                                                MEV Baby 000120JBAE - WIP
+
+
 🟠 What’s MEV
 
 🟠 MEV Strats
