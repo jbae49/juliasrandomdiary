@@ -145,12 +145,3 @@ test_test1() (gas: 28245) (that uses `public`) spent less gas than test_test2() 
 <br />
 <br />
 <br />
-
-I still don’t figure out 
-
-- Why in this case external function spent more gas than public function?
-- Does Solidity have a method like `range()` to generate numbers within the range?
-    - ex) `list(range(1,10))` Or `[1:10]` etc → [1,2,3,4,5,6,7,8,9,10]
-    - Need to use for loop by pushing numbers in a dynamic array?
-    - What’s the best practice for this
-- I still don’t know why people declare the value first then assign later in Solidity
