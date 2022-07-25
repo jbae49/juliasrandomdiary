@@ -14,6 +14,9 @@ think I'm pretty good at ignoring rude people
 The multichain world 
 
 - Cosmos IBC
+
+Cosmos in practice however, many ibc chains amongst each other rather than gravitating towards a single hub. Most of ibc transactions are taking place on Osmosis, a cosmos based DEX lives on its own blockchain and acts as its own interoperable
+
 - Anyswap
 - THORChain
 - Polkadot Parachain
